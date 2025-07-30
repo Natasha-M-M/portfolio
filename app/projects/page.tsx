@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import ProjectsClientPage from "./ProjectsClientPage"
+import ProjectsClient from "./ProjectsClient"
 
 export const metadata: Metadata = {
   title: "My Projects",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectsPage() {
-  return <ProjectsClientPage />
+  return <ProjectsClient />
 }

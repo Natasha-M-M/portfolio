@@ -8,9 +8,9 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Linkedin, Mail, Send, MapPin, CheckCircle, AlertCircle } from "lucide-react"
 import { useState, useTransition } from "react"
-import Navigation from "@/components/Navigation"
+
 import Footer from "@/components/Footer"
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/app/context/theme-context"
 import { sendContactEmail } from "./actions"
 
 export default function ContactClient() {
@@ -56,8 +56,6 @@ export default function ContactClient() {
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${themeClasses}`}>
-      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
-
       {/* Hero Section */}
       <section className="py-20 pt-32">
         <div className="container mx-auto px-6">

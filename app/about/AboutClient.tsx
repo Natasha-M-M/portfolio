@@ -6,9 +6,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Code, Palette, Smartphone, Users, Award, Calendar, MapPin, Mail } from "lucide-react"
 import Image from "next/image"
-import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/app/context/theme-context"
 
 const skillsAnimation = {
   v: "5.7.4",
@@ -52,7 +51,7 @@ const skillsAnimation = {
             },
             {
               ty: "fl",
-              c: { a: 0, k: [1, 0.84, 0, 1] }, // Golden color
+              c: { a: 0, k: [1, 0.84, 0, 1] },
               o: { a: 0, k: 100 },
             },
           ],
@@ -66,7 +65,7 @@ const skillsAnimation = {
 }
 
 export default function AboutClient() {
-  const { isDark, toggleTheme } = useTheme()
+  const { isDark } = useTheme()
 
   const themeClasses = isDark ? "bg-black" : "bg-gradient-to-br from-gray-50 via-white to-gray-100"
 
@@ -83,7 +82,7 @@ export default function AboutClient() {
       company: "Uncommon.org",
       period: "2025 - Present",
       description: "Developing web applications and mobile solutions for various clients across different industries.",
-      technologies: ["React", "Next.js", "Node.js", "MongoDB", "Supabase",],
+      technologies: ["React", "Next.js", "Node.js", "MongoDB", "Supabase"],
     },
     {
       title: "Digital Marketing Specialist",
@@ -117,8 +116,6 @@ export default function AboutClient() {
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${themeClasses}`}>
-      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
-
       {/* Hero Section */}
       <section className="py-20 pt-32">
         <div className="container mx-auto px-6">
@@ -141,9 +138,11 @@ export default function AboutClient() {
               About Me
             </h1>
             <p className={`text-xl ${isDark ? "text-gray-300" : "text-gray-600"} max-w-3xl mx-auto mb-8`}>
-             I am a creative and detail-oriented web developer with a strong passion for solving problems through clean, user-focused design and code. With hands-on experience in tools like Next.js, Tailwind CSS, and modern frontend frameworks, I enjoy building websites and web apps that are both functional and beautiful. I'm constantly learning and exploring new technologies to stay current and continuously improve my skills. Whether working independently or in a team, I value clarity, innovation, and impact.
-
-
+              I am a creative and detail-oriented web developer with a strong passion for solving problems through
+              clean, user-focused design and code. With hands-on experience in tools like Next.js, Tailwind CSS, and
+              modern frontend frameworks, I enjoy building websites and web apps that are both functional and beautiful.
+              I'm constantly learning and exploring new technologies to stay current and continuously improve my skills.
+              Whether working independently or in a team, I value clarity, innovation, and impact.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
               {personalInfo.map((info, index) => (
@@ -337,7 +336,7 @@ export default function AboutClient() {
         </div>
       </section>
 
-      <Footer isDark={isDark} />
+      <Footer />
     </div>
   )
 }

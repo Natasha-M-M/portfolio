@@ -4,9 +4,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Download, Eye } from "lucide-react"
 import Image from "next/image"
-import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/app/context/theme-context"
 import { useState } from "react"
 
 export default function ResumePageClient() {
@@ -21,7 +20,6 @@ export default function ResumePageClient() {
 
   // Function to handle CV download
   const handleDownload = () => {
-    // Create a link element
     const link = document.createElement("a")
     link.href = "/images/natasha-cv.png" // Path to your CV image
     link.download = "Natasha_Mubaiwa_CV.jpeg"
@@ -32,7 +30,7 @@ export default function ResumePageClient() {
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${themeClasses}`}>
-      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
+      {/* Removed Navigation */}
 
       {/* Resume Section */}
       <section className="py-20 pt-32">

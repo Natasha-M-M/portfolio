@@ -7,9 +7,8 @@ import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink, Play } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
-import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/app/context/theme-context"
 
 export default function ProjectsClient() {
   const { isDark, toggleTheme } = useTheme()
@@ -174,7 +173,7 @@ export default function ProjectsClient() {
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${themeClasses}`}>
-      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
+      {/* Navigation removed */}
 
       {/* Projects Section */}
       <section className="py-20 pt-32">
@@ -255,14 +254,17 @@ export default function ProjectsClient() {
                           : "object-cover"
                       } group-hover:scale-105 transition-transform duration-300`}
                       onError={(e) => {
-                        console.log("Image failed to load:", project.title)
                         const target = e.target as HTMLImageElement
                         target.src = project.fallbackImage
                       }}
                       priority={index < 6} // Prioritize loading first 6 images
                     />
                     <div
-                      className={`absolute inset-0 ${isDark ? "bg-gradient-to-t from-gray-900/60 via-transparent to-gray-900/20" : "bg-gradient-to-t from-white/60 via-transparent to-white/20"} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                      className={`absolute inset-0 ${
+                        isDark
+                          ? "bg-gradient-to-t from-gray-900/60 via-transparent to-gray-900/20"
+                          : "bg-gradient-to-t from-white/60 via-transparent to-white/20"
+                      } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     />
 
                     {/* Play button overlay for video projects */}

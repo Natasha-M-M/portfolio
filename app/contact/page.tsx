@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import ContactPageClient from "./ContactPageClient"
+import ContactClient from "./ContactClient"
 
 export const metadata: Metadata = {
   title: "Contact Me",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  return <ContactPageClient />
+  return <ContactClient />
 }

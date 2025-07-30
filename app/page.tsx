@@ -6,9 +6,8 @@ import Lottie from "lottie-react"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, Download } from "lucide-react"
 import Link from "next/link"
-import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/app/context/theme-context"
 
 // Flying papers animation with golden colors
 const flyingPapersAnimation = {
@@ -221,7 +220,7 @@ const flyingPapersAnimation = {
 }
 
 export default function HomePage() {
-  const { isDark, toggleTheme } = useTheme()
+  const { isDark } = useTheme()
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
@@ -230,8 +229,6 @@ export default function HomePage() {
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${themeClasses}`}>
-      <Navigation isDark={isDark} toggleTheme={toggleTheme} />
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
@@ -378,7 +375,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer isDark={isDark} />
+      <Footer />
     </div>
   )
 }
