@@ -70,10 +70,10 @@ export default function AboutClient() {
   const themeClasses = isDark ? "bg-black" : "bg-gradient-to-br from-gray-50 via-white to-gray-100"
 
   const skills = [
-    { name: "Frontend Development", icon: Code, level: 95, description: "React, Next.js, TailwindCSS" },
-    { name: "Graphic Design", icon: Palette, level: 88, description: "Figma, Canva" },
-    { name: "Digital Marketer", icon: Smartphone, level: 82, description: "Social media Platforms" },
-    { name: "Scratch Programming", icon: Code, level: 90, description: "Educational Programming" },
+    { name: "Frontend Development", icon: Code, description: "React, Next.js, TailwindCSS" },
+    { name: "Graphic Design", icon: Palette, description: "Figma, Canva" },
+    { name: "Digital Marketer", icon: Smartphone, description: "Social media Platforms" },
+    { name: "Scratch Programming", icon: Code, description: "Educational Programming" },
   ]
 
   const experience = [
@@ -199,16 +199,7 @@ export default function AboutClient() {
                     <h3 className={`text-xl font-semibold ${isDark ? "text-white" : "text-gray-900"} mb-2`}>
                       {skill.name}
                     </h3>
-                    <p className={`text-sm ${isDark ? "text-gray-400" : "text-gray-500"} mb-4`}>{skill.description}</p>
-                    <div className={`w-full ${isDark ? "bg-gray-700" : "bg-gray-200"} rounded-full h-2 mb-2`}>
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className={`${isDark ? "bg-yellow-400" : "bg-gray-900"} h-2 rounded-full`}
-                      />
-                    </div>
-                    <span className={`${isDark ? "text-gray-400" : "text-gray-500"}`}>{skill.level}%</span>
+                    <p className={`text-sm ${isDark ? "text-gray-400" : "text-gray-500"}`}>{skill.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -340,3 +331,4 @@ export default function AboutClient() {
     </div>
   )
 }
+

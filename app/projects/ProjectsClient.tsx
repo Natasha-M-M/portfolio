@@ -425,7 +425,7 @@ export default function ProjectsClient() {
         </div>
       </section>
 
-      <Footer isDark={isDark} />
+      <Footer  />
     </div>
   )
 }
