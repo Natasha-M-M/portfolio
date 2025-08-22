@@ -118,15 +118,15 @@ export default function ProjectsClient() {
     },
     {
       id: 9,
-      title: "E-Commerce Platform",
+      title: "Construction Company Profile",
       description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies for optimal performance.",
+        "Full-stack construction Built with modern technologies for optimal performance.",
       category: "software-development",
-      tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      image: "/placeholder.svg?height=600&width=400&text=E-Commerce+Platform",
-      fallbackImage: "/placeholder.svg?height=600&width=400&text=E-Commerce+Platform",
-      github: "#",
-      live: "#",
+      tech: ["Next.js", "TypeScript", ],
+      image: "/images/construction.png?height=600&width=400&text=E-Commerce+Platform",
+      fallbackImage: "/images/construction.png?height=600&width=400&text=E-Commerce+Platform",
+      github: "https://github.com/Natasha-M-M/-Company-Profile.git",
+      live: "https://company-profile-mu-six.vercel.app/",
     },
     // Scratch Programming Projects
     {
